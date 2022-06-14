@@ -229,3 +229,146 @@ class TableViewController: UITableViewController {
 
 + AddViewController.swift
 ```swift
+
+import UIKit
+
+ 
+
+class AddViewController: UIViewController {
+
+ 
+
+    @IBOutlet var tfAddItem: UITextField!
+
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+
+ 
+
+        // Do any additional setup after loading the view.
+
+    }
+
+    
+// 새 목록 추가
+    @IBAction func btnAddItem(_ sender: UIButton) {
+
+        items.append(tfAddItem.text!)
+
+        itemsImageFile.append("clock.png")
+
+        tfAddItem.text=""
+
+        _ = navigationController?.popViewController(animated: true)
+
+    }
+
+    
+
+    /*
+
+    // MARK: - Navigation
+
+ 
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        // Get the new view controller using segue.destination.
+
+        // Pass the selected object to the new view controller.
+
+    }
+
+    */
+
+ 
+
+}
+```
+
+---
++ DetailViewController.swift
+```swift
+
+import UIKit
+
+ 
+
+class DetailViewController: UIViewController {
+
+    
+
+    var receiveItem = ""
+
+ 
+
+    @IBOutlet var lblItem: UILabel!
+
+    override func viewDidLoad() {
+
+        super.viewDidLoad()
+
+ 
+
+        // Do any additional setup after loading the view.
+
+        lblItem.text = receiveItem
+
+    }
+
+    
+// Main View에서 변수 받아오기 
+    func receiveItem(_ item: String)
+
+    {
+
+        receiveItem = item
+
+    }
+
+    
+
+ 
+
+    /*
+
+    // MARK: - Navigation
+
+ 
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        // Get the new view controller using segue.destination.
+
+        // Pass the selected object to the new view controller.
+
+    }
+
+    */
+
+ 
+
+}
+```
+---
+# 스크린샷
+![스크린샷 2022-05-13 오후 4 36 05](https://user-images.githubusercontent.com/106370789/173593506-8ee64433-9636-4c8a-82b2-c70a215a0e61.png)
+![스크린샷 2022-05-13 오후 4 36 16](https://user-images.githubusercontent.com/106370789/173594289-762b9475-2fb0-42af-8769-8c60a6ca51ea.png)
+
+
+![스크린샷 2022-05-13 오후 4 36 29](https://user-images.githubusercontent.com/106370789/173594383-15e034d0-0d0b-442c-a754-693898b7e806.png)
+![스크린샷 2022-05-13 오후 4 36 44](https://user-images.githubusercontent.com/106370789/173594456-0c8a781e-9acf-4a7a-931b-24520875c57a.png)
+
+---
+# 출처
++ 스위프트로 아이폰 앱 만들기 입문 개정 6판
+
+
+
+
+
